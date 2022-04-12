@@ -9,11 +9,11 @@ const Informer=()=>{
                 <button>
                     <MenuBookIcon />
                 </button>
-                <h1>5 Raisons de résiliation d'un contrat <hr /></h1>
+                <h1>Nos archives <hr /></h1>
                 <button className="btn_all">
                     <MoreHorizIcon style={{color:"white"}}/>
                     <span>
-                    Toutes nos assurances</span>
+                    Tous nos archives</span>
                 </button>
             </div>
             <div className="content">
