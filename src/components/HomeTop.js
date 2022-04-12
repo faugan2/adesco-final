@@ -87,20 +87,10 @@ const HomeTop=()=>{
             </div>
             <div className="bottom">
                 <div>
-                    <h2>Quelle assurance recherchez-vous ?</h2>
-                    <select onChange={type_changed}>
-                        <option value="0">Particulier</option>
-                        <option value="1">Professionnel</option>
-                    </select>
-                    <select>
-                        {
-                            data?.map((item,i)=>{
-                                return(
-                                    <option key={i}>{item}</option>
-                                )
-                            })
-                        }
-                    </select>
+                    <h2>Besoin d'en savoir plus ?</h2>
+                    <h2 style={{color:"indianred"}}>Voulez-vous adhérer ?</h2>
+                    <h2>Voulez-vous faire un don ?</h2>
+                    
                     <button onClick={e=>set_open(true)}>Nous conacter</button>
                 </div>
                 

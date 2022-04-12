@@ -3,6 +3,35 @@
     display:flex;
     flex-direction:column;
     width:min(350px, 80vw);
+    
+    >.top{
+        background-color:var(--blue);
+        height:50px;
+        display:flex;
+        align-items: center;
+        justify-content:space-between;
+        color:white;
+        margin-bottom: 1rem;
+        >h2{
+            font-size: 1rem;
+            margin-left: 1rem;
+        }
+
+        >button{
+            width:40px;
+            height: 40px;
+            border-radius: 50%;
+            border:none;
+            display:flex;
+            align-items: center;
+            justify-content:center;
+            background-color:white;
+            >svg{
+                color:indianred;
+            }
+        }
+        
+    }
     >.line{
         display:flex;
         flex-direction: column;

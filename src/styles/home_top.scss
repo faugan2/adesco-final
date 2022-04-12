@@ -147,6 +147,10 @@
            display:flex;
            align-items: center;
            gap:1rem;
+
+           >h2{
+               font-size: 1.1rem;
+           }
            >*{
                flex:1;
            }
@@ -164,6 +168,7 @@
                font-size: 1.2rem;
                text-transform: uppercase;
                font-weight: bold;
+               cursor: pointer;
            }
        }
    }
