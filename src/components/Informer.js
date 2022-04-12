@@ -2,6 +2,8 @@ import "../styles/informer.scss";
 import "../styles/informer_mobile.scss";
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
+import un from "./img/1.jpg";
+
 const Informer=()=>{
     return(
         <div className="informer">
@@ -19,7 +21,7 @@ const Informer=()=>{
             <div className="content">
                 <div>
                     <div>
-                        <button>1</button>
+                        <img src={un} />
                         <h3>L’absence de paiement des cotisations</h3>
                     </div>
                     <p>
@@ -33,7 +35,7 @@ const Informer=()=>{
 
                 <div>
                     <div>
-                        <button>2</button>
+                        <img src={un} />
                         <h3>La survenance d’un sinistre</h3>
                     </div>
                     <p>
@@ -49,7 +51,7 @@ const Informer=()=>{
                 </div>
                 <div>
                     <div>
-                        <button>3</button>
+                        <img src={un} />
                         <h3>L’aggravation du risque</h3>
                     </div>
                     <p>
@@ -63,7 +65,7 @@ const Informer=()=>{
 
                 <div>
                     <div>
-                        <button>4</button>
+                        <img src={un} />
                         <h3>Une déclaration d’informations inexactes</h3>
                     </div>
                     <p>
@@ -78,7 +80,7 @@ const Informer=()=>{
 
                 <div>
                     <div>
-                        <button>5</button>
+                    <img src={un} />
                         <h3>L’échéance de votre contrat</h3>
                     </div>
                     <p>
