@@ -4,46 +4,79 @@ import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
 import GroupWorkIcon from '@material-ui/icons/GroupWork';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import BusinessIcon from '@material-ui/icons/Business';
+import un from "./img/1.jpg";
+import deux from "./img/2.jpg";
+import trois from "./img/3.jpg";
+import quatre from "./img/4.png";
+import cinq from "./img/5.jpg";
+import six from"./img/6.jpg";
+import sept from "./img/7.jpg";
+import huit from "./img/8.jpg";
+
+import {useState,useEffect} from "react";
+
 const Engagements=()=>{
+    const [data,set_data]=useState([
+        {
+            image:un,
+            title:"Privé : Promotion des Droits des Adolescents à la Santé Sexuelle et Génésique (DASSG)",
+            detail:"Les adolescent (e)s et jeunes âgé(e)s de 10 à 24 ans qui représentent 30,6% de la"
+        },
+        {
+            image:deux,
+            title:"Privé : Mobilisation Communautaire / Renforcement de capacités",
+            detail:"ADESCO est une ONG à but non lucratif qui jouit d’un réel ancrage communautaire et a une forte capacité"
+        },
+        {
+            image:trois,
+            title:"Privé : Promotion des Droits des Adolescents à la Santé Sexuelle et Génésique (DASSG)",
+            detail:"Les adolescent (e)s et jeunes âgé(e)s de 10 à 24 ans qui représentent 30,6% de la"
+        },
+        {
+            image:quatre,
+            title:"Privé : Promotion des Droits des Adolescents à la Santé Sexuelle et Génésique (DASSG)",
+            detail:"Les adolescent (e)s et jeunes âgé(e)s de 10 à 24 ans qui représentent 30,6% de la"
+        },
+        {
+            image:cinq,
+            title:"Privé : Promotion des Droits des Adolescents à la Santé Sexuelle et Génésique (DASSG)",
+            detail:"Les adolescent (e)s et jeunes âgé(e)s de 10 à 24 ans qui représentent 30,6% de la"
+        },
+        {
+            image:six,
+            title:"Privé : Promotion des Droits des Adolescents à la Santé Sexuelle et Génésique (DASSG)",
+            detail:"Les adolescent (e)s et jeunes âgé(e)s de 10 à 24 ans qui représentent 30,6% de la"
+        },
+        {
+            image:sept,
+            title:"Privé : Promotion des Droits des Adolescents à la Santé Sexuelle et Génésique (DASSG)",
+            detail:"Les adolescent (e)s et jeunes âgé(e)s de 10 à 24 ans qui représentent 30,6% de la"
+        },
+        {
+            image:huit,
+            title:"Privé : Promotion des Droits des Adolescents à la Santé Sexuelle et Génésique (DASSG)",
+            detail:"Les adolescent (e)s et jeunes âgé(e)s de 10 à 24 ans qui représentent 30,6% de la"
+        },
+    ])
     return(
         <div className="engagements">
             <div className="top">
-                <h2>Pourquoi choisir CCM</h2>
+                <h2>Nos prestations</h2>
             </div>
             <div className="content">
-                <div>
-                    <AssignmentTurnedInIcon />
-                    <h3>Votre fidélité récompensée</h3>
-                    <p>Afin de bénéficier des meilleures garanties au meilleur prix, 
-                        nous vous proposons une révision systématique de votre contrat tous les deux ans.
-                    </p>
-                </div>
 
-
-                <div>
-                    <GroupWorkIcon />
-                    <h3>Notre équipe à votre écoute</h3>
-                    <p>
-                    Une demande spécifique ? Un doute ? Nous vous rappelons gratuitement pour répondre à toutes vos questions.
-                    </p>
-                </div>
-
-                <div>
-                    <AccountBoxIcon />
-                    <h3>Des assurances adaptées à vos besoins</h3>
-                    <p>
-                    Nous sélectionnons auprès de nos partenaires l’assurance qui vous convient le mieux : 
-                    la certitude pour vous d’être bien couvert sans dépense superflue.
-                    </p>
-                </div>
-
-                <div>
-                    <BusinessIcon />
-                    <h3>Notre professionnalisme, gage de votre confiance</h3>
-                    <p>
-                    Une équipe compétente et des partenaires fiables vous garantissent d’être assuré en toute sérénité.
-                    </p>
-                </div>
+                {
+                    data?.map((item,i)=>{
+                        return(
+                            <div key={i}>
+                                    <img src={item.image} />
+                                    <h3>{item.title}</h3>
+                                    <p>{item.detail}</p>  
+                            </div>
+                        )
+                    })
+                }
+                
             </div>
         </div>
     );

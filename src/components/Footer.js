@@ -15,7 +15,6 @@ const Footer=()=>{
                     <h4>A propos de nous</h4>
                     <hr />
                     <ul>
-                        <li><Link to="#"><a>Mot de la PCA</a></Link></li>
                         <li><Link to="#"><a>Vision, mission, valeurs et principes partagés</a></Link></li>
                         <li><Link to="#"><a>Approches d'intervention</a></Link></li>
                         <li><Link to="#"><a>Axes stratégiques</a></Link></li>
