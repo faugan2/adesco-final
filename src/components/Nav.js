@@ -30,15 +30,19 @@ const Nav=()=>{
   
     return(
         <div className="nav">
-            <div className="left">
+            <div className="left" onClick={e=>{
+                history.push("/client");
+            }}>
                 <img src={adesco}/> 
                 <h1>ONG <span>ADESCO</span></h1>
             </div>
             <div className="right">
                 <ul>
-                    <li>
+                    <li onClick={e=>{
+                        history.push("/home");
+                    }}>
                         <HomeIcon />
-                        <Link to="/home"><a>Accueil</a></Link>
+                        <Link><a>Accueil</a></Link>
                     </li>
                     <li onClick={e=>{
                         history.push("/activites");
@@ -46,7 +50,9 @@ const Nav=()=>{
                         <HelpOutlineIcon />
                         <Link to="/page-content"><a>Activités réalisées</a></Link>
                     </li>
-                    <li>
+                    <li onClick={e=>{
+                        history.push("/rapports");
+                    }}>
                         <TurnedInNotIcon />
                         <Link to="#"><a>Rapport d'activités</a></Link>
                     </li>
