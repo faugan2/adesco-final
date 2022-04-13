@@ -29,6 +29,17 @@
            flex:1;
            display:flex;
            flex-direction: column;
+           align-items: center;
+           &.left{
+              
+              height:350px;
+                width:300px;
+              >div{
+                  >div{
+                      
+                  }
+              }
+           }
            &.content{
                flex:2;
                >h2{

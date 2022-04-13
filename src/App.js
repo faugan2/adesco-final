@@ -9,17 +9,22 @@ import {
 
 import Splash from './screens/Splash';
 import Home from "./screens/Home";
+import PageContent from "./screens/PageContent";
 
 function App() {
   return (
     <Router>
         <Switch>
-          <Route path="/" exact>
+          <Route path="/client" exact>
             <Splash />
           </Route>
 
           <Route path="/home" exact>
             <Home />
+          </Route>
+
+          <Route path="/page-content" exact>
+            <PageContent />
           </Route>
         
         </Switch>

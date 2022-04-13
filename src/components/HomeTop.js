@@ -12,6 +12,29 @@ import Modal from "./Modal";
 import Contact from "./Contact";
 
 
+import un from "./img/1.jpg";
+import deux from "./img/2.jpg";
+import trois from "./img/3.jpg";
+import quatre from "./img/4.png";
+import cinq from "./img/5.jpg";
+import six from"./img/6.jpg";
+import sept from "./img/7.jpg";
+import huit from "./img/8.jpg";
+
+import slide1 from "./img/slide1.jpg";
+import slide2 from "./img/slide2.jpg";
+import slide3 from "./img/slide3.jpeg";
+import slide4 from "./img/slide4.jpg";
+
+import SimpleImageSlider from "react-simple-image-slider";
+
+const images = [
+    { url: slide1 },
+    { url: slide2 },
+    { url: slide3 },
+    { url: slide4 },
+  ];
+
 const HomeTop=()=>{
     const [assurances,set_assurances]=useState([
         {
@@ -52,7 +75,18 @@ const HomeTop=()=>{
                 <h1 className="content">BIENVENUE CHEZ l'ONG ADESCO</h1>
             </div>
             <div className="center">
-                <div></div>
+                <div className="left">
+                <SimpleImageSlider
+                    width={300}
+                    height={350}
+                    images={images}
+                    showBullets={false}
+                    showNavs={false}
+                    autoPlay={true}
+                    navMargin={0}
+                    navStyle={2}
+                />
+                </div>
                 <div className="content">
                     <h2>Mieux connaitre l'ONG ADESCO</h2>
                     <button>

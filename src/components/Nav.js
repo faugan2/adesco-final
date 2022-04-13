@@ -38,11 +38,11 @@ const Nav=()=>{
                 <ul>
                     <li>
                         <HomeIcon />
-                        <Link to="#"><a>Accueil</a></Link>
+                        <Link to="/home"><a>Accueil</a></Link>
                     </li>
                     <li>
                         <HelpOutlineIcon />
-                        <Link to="#"><a>Activités réalisées</a></Link>
+                        <Link to="/page-content"><a>Activités réalisées</a></Link>
                     </li>
                     <li>
                         <TurnedInNotIcon />
