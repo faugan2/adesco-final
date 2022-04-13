@@ -1,21 +1,35 @@
 .parteners{
     
     min-height: 100px;
-    width:80%;
     margin:auto;
-    margin-top: 2rem;
-    margin-bottom:2rem;
+    margin: 2rem;
+    
     .partener{
         
         height:100px;
         margin-right: 2rem;
         border:none;
         background-color: transparent;
-
+        width:min(200px,50vw);
+        border-right: 1px solid silver;
+        cursor: pointer;
+        
+        &:hover{
+            opacity: 0.6;
+            transform:1s;
+        }
         >img{
             width:100px;
             height:100px;
             object-fit: cover;
+        }
+
+        >h4{
+            font-size:0.7rem;
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+            color:indianred;
+            text-align: center;
         }
     }
 }

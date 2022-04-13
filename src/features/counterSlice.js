@@ -2,8 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 
 const initialState = {
-  value: 0,
-  status: 'idle',
+  activites:null,
+  partenaires:null,
 };
 
 
@@ -14,17 +14,21 @@ export const counterSlice = createSlice({
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
     
-    incrementByAmount: (state, action) => {
-      state.value += action.payload;
+   
+    setActivites:(state,action)=>{
+      state.activites=action.payload;
     },
+    setPartenaires:(state,action)=>{
+      state.partenaires=action.payload;
+    }
   },
  
 });
 
-export const { incrementByAmount } = counterSlice.actions;
+export const { setActivites,setPartenaires } = counterSlice.actions;
 
 
-export const selectCount = (state) => state.counter.value;
-
+export const selectActivites = (state) => state.counter.activites;
+export const selectPartenaires=(state)=> state.counter.partenaires;
 
 export default counterSlice.reducer;

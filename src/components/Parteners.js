@@ -10,9 +10,19 @@ import a2w from "./img/logo3.jpeg";
 import get_driver from "./img/get_driver.jpeg";
 import adesco from "./img/adesco.jpg";
 import jsql from "./img/jsql.png";
+import { useSelector } from "react-redux";
+import {selectPartenaires} from "../features/counterSlice";
+
 
 const Parteners=()=>{
-    const [data,set_data]=useState([sici,assitchape,foaf,ccm,a2w,get_driver,adesco,jsql])
+    const p=useSelector(selectPartenaires);
+
+    const [data,set_data]=useState(null);
+
+    useEffect(()=>{
+        if(p==null) return;
+        set_data(p);
+    },[p])
     return(
         <div className="parteners">
            <ScrollMenu>
@@ -23,7 +33,8 @@ const Parteners=()=>{
                             key={i}
                             className="partener"
                            >
-                               <img src={item} />
+                               <img src={item.acf.image.url} />
+                               <h4>{item.title.rendered}</h4>
                            </button>
                         )
                     })
