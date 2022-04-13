@@ -12,6 +12,7 @@ import Home from "./screens/Home";
 import PageContent from "./screens/PageContent";
 import Activites from "./screens/Activites";
 import Rapports from "./screens/Rapports";
+import AvisBulletins from "./screens/AvisBulletins";
 
 function App() {
   return (
@@ -31,6 +32,10 @@ function App() {
 
           <Route path="/rapports" exact>
             <Rapports />
+          </Route>
+
+          <Route path="/avis-bulletins" exact>
+            <AvisBulletins />
           </Route>
 
           <Route path="/page-content" exact>

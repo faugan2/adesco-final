@@ -57,7 +57,9 @@ const Nav=()=>{
                         <Link to="#"><a>Rapport d'activités</a></Link>
                     </li>
 
-                    <li>
+                    <li onClick={e=>{
+                        history.push("/avis-bulletins");
+                    }}>
                         <FolderOpenIcon />
                         <Link to="#"><a>Avis & Bulletin</a></Link>
                         {/*<ul className="dropdown">

@@ -30,7 +30,12 @@ const PageContent=()=>{
                                 <div key={i}>
                                     <h3>Année {item.acf.annee}</h3>
                                     <p>{item.acf.note}</p>
-                                    <button>
+                                    <button onClick={e=>{
+                                        window.open(
+                                            item.acf.fichier,
+                                            '_blank'
+                                          );
+                                    }}>
                                         <GetAppIcon />
                                         Telécharger</button>
                                 </div>

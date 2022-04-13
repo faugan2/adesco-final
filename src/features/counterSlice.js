@@ -6,6 +6,8 @@ const initialState = {
   partenaires:null,
   pages:null,
   rapports:null,
+  avis:null,
+  bulletins:null,
 };
 
 
@@ -28,17 +30,28 @@ export const counterSlice = createSlice({
     },
     setRapports:(state,action)=>{
       state.rapports=action.payload;
+    },
+    setAvis:(state,action)=>{
+      state.avis=action.payload;
+    },
+    setBulletins:(state,action)=>{
+      state.bulletins=action.payload;
     }
   },
  
 });
 
-export const { setActivites,setPartenaires,setPages,setRapports } = counterSlice.actions;
+export const { setActivites,setPartenaires,setPages,setRapports,
+setAvis,
+setBulletins
+} = counterSlice.actions;
 
 
 export const selectActivites = (state) => state.counter.activites;
 export const selectPartenaires=(state)=> state.counter.partenaires;
 export const selectPages=(state)=> state.counter.pages;
 export const selectRapports=(state)=> state.counter.rapports;
+export const selectAvis=(state)=> state.counter.avis;
+export const selectBulletins=(state)=> state.counter.bulletins;
 
 export default counterSlice.reducer;

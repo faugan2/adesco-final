@@ -4,7 +4,11 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import {useState,useEffect} from "react";
 import { useHistory } from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {setActivites, setPages, setPartenaires, setRapports} from "../features/counterSlice";
+import {setActivites, setPages, setPartenaires, 
+    setRapports,
+    setAvis,
+    setBulletins
+} from "../features/counterSlice";
 
 const Splash=()=>{
     const history=useHistory();
@@ -16,6 +20,8 @@ const Splash=()=>{
                 await load_partenaires();
                 await load_pages();
                 await load_rapports();
+                await load_avis();
+                await load_bulletins();
                 history.replace("/home");
             })();
             
@@ -44,6 +50,18 @@ const Splash=()=>{
         const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/rapports");
         const data=await res.json();
         dispatch(setRapports(data))
+    }
+
+    const load_avis=async ()=>{
+        const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/avis");
+        const data=await res.json();
+        dispatch(setAvis(data))
+    }
+
+    const load_bulletins=async ()=>{
+        const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/bulletin");
+        const data=await res.json();
+        dispatch(setBulletins(data))
     }
     return (
         <div className="splash">
