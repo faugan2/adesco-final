@@ -15,9 +15,19 @@ import {useHistory} from "react-router-dom";
 
 import ccm from "./img/ccm.jpg";
 import adesco from "./img/adesco.jpg";
+import { selectPage } from "../features/counterSlice";
+import {useSelector} from "react-redux";
 
 const Nav=()=>{
+    const p=useSelector(selectPage);
+
     const [open,set_open]=useState(false);
+    const [page,set_page]=useState(0);
+
+    useEffect(()=>{
+        if(p==null) return;
+        set_page(p);
+    },[p])
 
     const history=useHistory();
     const show_menu=(e)=>{
@@ -38,38 +48,39 @@ const Nav=()=>{
             </div>
             <div className="right">
                 <ul>
-                    <li onClick={e=>{
+                    <li 
+                        className={`${page==0 ? "active" : ""}`}
+                    onClick={e=>{
                         history.push("/home");
                     }}>
                         <HomeIcon />
                         <Link><a>Accueil</a></Link>
                     </li>
-                    <li onClick={e=>{
+                    <li 
+                        className={`${page==1 ? "active" : ""}`}
+                    onClick={e=>{
                         history.push("/activites");
                     }}>
                         <HelpOutlineIcon />
                         <Link to="/page-content"><a>Activités réalisées</a></Link>
                     </li>
-                    <li onClick={e=>{
+                    <li 
+                        className={`${page==2 ? "active" : ""}`}
+                        onClick={e=>{
                         history.push("/rapports");
                     }}>
                         <TurnedInNotIcon />
                         <Link to="#"><a>Rapport d'activités</a></Link>
                     </li>
 
-                    <li onClick={e=>{
+                    <li 
+                    className={`${page==3 ? "active" : ""}`}
+                    onClick={e=>{
                         history.push("/avis-bulletins");
                     }}>
                         <FolderOpenIcon />
                         <Link to="#"><a>Avis & Bulletin</a></Link>
-                        {/*<ul className="dropdown">
-                            <li>
-                                <Link to="/"><a>Particulier</a></Link>
-                            </li> 
-                            <li>    
-                                <Link to="/"><a>Professionnel</a></Link>
-                            </li> 
-                        </ul>*/}
+                       
                     </li>
                     
 

@@ -10,9 +10,9 @@ import Informer from "../components/Informer";
 import Footer from "../components/Footer";
 
 import { useSelector } from "react-redux";
-import {selectActivites} from "../features/counterSlice";
+import {selectActivites, setPage} from "../features/counterSlice";
 import {useState,useEffect} from "react";
-
+import {useDispatch} from "react-redux";
 
 const Activites=()=>{
 
@@ -24,6 +24,11 @@ const Activites=()=>{
         if(activites==null) return;
         set_data(activites);
     },[activites])
+
+    const dispatch=useDispatch();
+    useEffect(()=>{
+        dispatch(setPage(1))
+    },[])
 
 
     return(

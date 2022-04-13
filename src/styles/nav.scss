@@ -42,6 +42,10 @@
                 padding-top: 10px;
                 border-top: 3px solid white;
                 cursor: pointer;
+
+                &.active{
+                    border-bottom: 3px solid var(--blue);
+                }
                 &:hover{
                     border-top: 3px solid var(--blue);
                     

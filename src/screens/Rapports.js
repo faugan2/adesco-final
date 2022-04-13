@@ -6,6 +6,9 @@ import { useSelector } from "react-redux";
 import { selectRapports} from "../features/counterSlice";
 import {useState,useEffect} from "react";
 import GetAppIcon from '@material-ui/icons/GetApp';
+import {useDispatch} from "react-redux";
+import {setPage} from "../features/counterSlice";
+
 const PageContent=()=>{
 
     const r=useSelector(selectRapports);
@@ -16,6 +19,11 @@ const PageContent=()=>{
         if(r==null) return;
         set_data(r);
     },[r])
+
+    const dispatch=useDispatch();
+    useEffect(()=>{
+        dispatch(setPage(2))
+    },[])
 
 
     return(
