@@ -1,25 +1,25 @@
 .parteners{
-    
-    min-height: 100px;
-    margin:auto;
+
     margin: 2rem;
     
     .partener{
         
-        height:100px;
+        min-height:100px;
         margin-right: 2rem;
         border:none;
         background-color: transparent;
         width:min(200px,50vw);
         border-right: 1px solid silver;
         cursor: pointer;
-        
+        display:flex;
+        flex-direction: column;
+        align-items: center;
         &:hover{
             opacity: 0.6;
             transform:1s;
         }
         >img{
-            width:100px;
+            width:80%;
             height:100px;
             object-fit: cover;
         }
@@ -28,6 +28,7 @@
             font-size:0.7rem;
             text-transform: uppercase;
             margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
             color:indianred;
             text-align: center;
         }
