@@ -11,7 +11,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import {useState,useEffect} from "react";
 import Modal from "./Modal";
 import Contact from "./Contact";
-
+import {useHistory} from "react-router-dom";
 
 import ccm from "./img/ccm.jpg";
 import adesco from "./img/adesco.jpg";
@@ -19,7 +19,7 @@ import adesco from "./img/adesco.jpg";
 const Nav=()=>{
     const [open,set_open]=useState(false);
 
-
+    const history=useHistory();
     const show_menu=(e)=>{
         const menu=document.querySelector(".right");
         menu.classList.toggle("active");
@@ -40,7 +40,9 @@ const Nav=()=>{
                         <HomeIcon />
                         <Link to="/home"><a>Accueil</a></Link>
                     </li>
-                    <li>
+                    <li onClick={e=>{
+                        history.push("/activites");
+                    }}>
                         <HelpOutlineIcon />
                         <Link to="/page-content"><a>Activités réalisées</a></Link>
                     </li>

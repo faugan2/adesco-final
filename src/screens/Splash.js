@@ -4,7 +4,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import {useState,useEffect} from "react";
 import { useHistory } from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {setActivites, setPartenaires} from "../features/counterSlice";
+import {setActivites, setPages, setPartenaires} from "../features/counterSlice";
 
 const Splash=()=>{
     const history=useHistory();
@@ -14,6 +14,7 @@ const Splash=()=>{
             (async ()=>{
                 await load_activites();
                 await load_partenaires();
+                await load_pages();
                 history.replace("/home");
             })();
             
@@ -30,6 +31,12 @@ const Splash=()=>{
         const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/partenaires");
         const data=await res.json();
         dispatch(setPartenaires(data))
+    }
+
+    const load_pages=async ()=>{
+        const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/pages");
+        const data=await res.json();
+        dispatch(setPages(data))
     }
     return (
         <div className="splash">

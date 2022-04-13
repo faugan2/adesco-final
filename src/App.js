@@ -10,6 +10,7 @@ import {
 import Splash from './screens/Splash';
 import Home from "./screens/Home";
 import PageContent from "./screens/PageContent";
+import Activites from "./screens/Activites";
 
 function App() {
   return (
@@ -21,6 +22,10 @@ function App() {
 
           <Route path="/home" exact>
             <Home />
+          </Route>
+
+          <Route path="/activites" exact>
+            <Activites />
           </Route>
 
           <Route path="/page-content" exact>
