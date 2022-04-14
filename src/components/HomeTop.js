@@ -11,15 +11,7 @@ import {useState,useEffect} from "react";
 import Modal from "./Modal";
 import Contact from "./Contact";
 
-
-import un from "./img/1.jpg";
-import deux from "./img/2.jpg";
-import trois from "./img/3.jpg";
-import quatre from "./img/4.png";
-import cinq from "./img/5.jpg";
-import six from"./img/6.jpg";
-import sept from "./img/7.jpg";
-import huit from "./img/8.jpg";
+import {useHistory} from "react-router-dom";
 
 import slide1 from "./img/slide1.jpg";
 import slide2 from "./img/slide2.jpg";
@@ -68,6 +60,8 @@ const HomeTop=()=>{
         const v=parseInt(e.target.value);
         set_type(v);
     }
+
+    const history=useHistory();
     return(
         <div className="home_top" style={{backgroundImage:`url(${banner})`,backgroundRepeat: 'no-repeat',}}>
             <div className="top">
@@ -89,29 +83,39 @@ const HomeTop=()=>{
                 </div>
                 <div className="content">
                     <h2>Mieux connaitre l'ONG ADESCO</h2>
-                    <button>
+                    <button onClick={e=>{
+                        history.push("/vision");
+                    }}>
                         Vision, mission, valeurs et principes
                         <div>
                             <DriveEtaIcon  />
                         </div>
                     </button>
                     <div>
-                        <button>Approches d'interventions
+                        <button onClick={e=>{
+                            history.push("/approches-intervention")
+                        }}>Approches d'interventions
                         <div>
                             <HomeIcon  />
                         </div>
                         </button>
-                        <button>Planification stratégiques
+                        <button onClick={e=>{
+                            history.push("/planification")
+                        }}>Planification stratégiques
                         <div>
                             <FlightTakeoffIcon  />
                         </div>
                         </button>
-                        <button>Organigramme
+                        <button onClick={e=>{
+                            history.push("/organigramme")
+                        }}>Organigramme
                         <div>
                             <PeopleIcon  />
                         </div>
                         </button>
-                        <button>Status et agréments
+                        <button onClick={e=>{
+                            history.push("/status-agrements");
+                        }}>Status et agréments
                         <div>
                             <MoreHorizIcon  />
                         </div>

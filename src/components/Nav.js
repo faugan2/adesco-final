@@ -15,11 +15,21 @@ import {useHistory} from "react-router-dom";
 
 import ccm from "./img/ccm.jpg";
 import adesco from "./img/adesco.jpg";
-import { selectPage } from "../features/counterSlice";
+import { selectPage,selectAdescos, selectLoading } from "../features/counterSlice";
 import {useSelector} from "react-redux";
 
 const Nav=()=>{
     const p=useSelector(selectPage);
+    const pages=useSelector(selectAdescos);
+    const loading=useSelector(selectLoading);
+
+    const history=useHistory();
+    
+    useEffect(()=>{
+        if(loading==false && pages==null){
+            history.push("/client");
+        }
+    },[pages,loading]);
 
     const [open,set_open]=useState(false);
     const [page,set_page]=useState(0);
@@ -29,7 +39,7 @@ const Nav=()=>{
         set_page(p);
     },[p])
 
-    const history=useHistory();
+    
     const show_menu=(e)=>{
         const menu=document.querySelector(".right");
         menu.classList.toggle("active");

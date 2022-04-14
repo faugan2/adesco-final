@@ -21,7 +21,7 @@ const Who =()=>{
         <div className="who">
             <div className="content">
                 <h1>{data?.title.rendered}</h1>
-                <div    dangerouslySetInnerHTML={{__html:data?.acf.description}}/>
+                <div dangerouslySetInnerHTML={{__html:data?.acf.description}}/>
             </div>
         </div>
     );

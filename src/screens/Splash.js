@@ -8,7 +8,8 @@ import {setActivites, setPages, setPartenaires,
     setRapports,
     setAvis,
     setBulletins,
-    setAdescos
+    setAdescos,
+    setLoading,
 } from "../features/counterSlice";
 
 const Splash=()=>{
@@ -17,6 +18,7 @@ const Splash=()=>{
     useEffect(()=>{
         
             (async ()=>{
+                dispatch(setLoading(true));
                 await load_activites();
                 await load_partenaires();
                 await load_pages();
@@ -24,6 +26,7 @@ const Splash=()=>{
                 await load_avis();
                 await load_bulletins();
                 await load_adescos();
+                dispatch(setLoading(false));
                 
                 history.replace("/home");
             })();
