@@ -19,9 +19,13 @@
             &.galerie_image{
                 display:grid;
                 grid-template-columns:32% 32% 32% ;
+                grid-gap: 1rem;
+                
                 >div{
                     margin-left: 1rem;
-                    
+                    >img{
+                        width:min(300px,100%);
+                    }
                     >p{
                         font-size: 0.9rem;
                     }
