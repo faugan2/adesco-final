@@ -15,31 +15,30 @@ const Footer=()=>{
                     <h4>A propos de nous</h4>
                     <hr />
                     <ul>
-                        <li><Link to="#"><a>Vision, mission, valeurs et principes partagés</a></Link></li>
-                        <li><Link to="#"><a>Approches d'intervention</a></Link></li>
-                        <li><Link to="#"><a>Axes stratégiques</a></Link></li>
-                        <li><Link to="#"><a>Planification stratégiques 2018-2023</a></Link></li>
-                        <li><Link to="#"><a>Organigramme</a></Link></li>
-                        <li><Link to="#"><a>Status et agréments</a></Link></li>
+                        <li><Link to="/vision"><a>Vision, mission, valeurs et principes partagés</a></Link></li>
+                        <li><Link to="/approches-intervention"><a>Approches d'intervention</a></Link></li>
+                        <li><Link to="/axes-strategiques"><a>Axes stratégiques</a></Link></li>
+                        <li><Link to="/planification"><a>Planification stratégiques 2018-2023</a></Link></li>
+                        <li><Link to="/organigramme"><a>Organigramme</a></Link></li>
+                        <li><Link to="/status-agrements"><a>Status et agréments</a></Link></li>
                     </ul>
                 </div>
                 <div>
                 <h4>Soutenir adesco</h4>
                 <hr />
                     <ul>
-                        <li><Link to="#"><a>Pourquoi travailler avec l'ONG ADESCO</a></Link></li>
-                        <li><Link to="#"><a>Faire un don</a></Link></li>
-                        <li><Link to="#"><a>Nos projets</a></Link></li>
-                        <li><Link to="#"><a>Adhésion</a></Link></li>
-                        <li><Link to="#"><a>Les donateurs</a></Link></li>
-                        <li><Link to="#"><a>Devenir bénévole</a></Link></li>
+                        <li><Link to="/travailler-avec-adesco"><a>Pourquoi travailler avec l'ONG ADESCO</a></Link></li>
+                        <li><Link to="/faire-un-don"><a>Faire un don</a></Link></li>
+                        <li><Link to="/nos-projets"><a>Nos projets</a></Link></li>
+                        <li><Link to="/adhesion"><a>Adhésion</a></Link></li>
+                        <li><Link to="/devenir-benevole"><a>Devenir bénévole</a></Link></li>
                     </ul>
                 </div>
                 <div>
                 <h4>Galerie</h4>
                 <hr />
                     <ul>
-                        <li><Link to="#"><a>Photos</a></Link></li>
+                        <li><Link to="/galerie-images"><a>Photos</a></Link></li>
                         <li><Link to="#"><a>Vidéos</a></Link></li>
                     </ul>
                 </div>

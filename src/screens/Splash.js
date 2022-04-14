@@ -7,7 +7,8 @@ import {useDispatch} from "react-redux";
 import {setActivites, setPages, setPartenaires, 
     setRapports,
     setAvis,
-    setBulletins
+    setBulletins,
+    setAdescos
 } from "../features/counterSlice";
 
 const Splash=()=>{
@@ -22,6 +23,8 @@ const Splash=()=>{
                 await load_rapports();
                 await load_avis();
                 await load_bulletins();
+                await load_adescos();
+                
                 history.replace("/home");
             })();
             
@@ -62,6 +65,12 @@ const Splash=()=>{
         const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/bulletin");
         const data=await res.json();
         dispatch(setBulletins(data))
+    }
+
+    const load_adescos=async ()=>{
+        const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/adesco");
+        const data=await res.json();
+        dispatch(setAdescos(data))
     }
     return (
         <div className="splash">

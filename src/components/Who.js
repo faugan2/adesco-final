@@ -1,18 +1,18 @@
 import "../styles/who.scss";
 import "../styles/who_mobile.scss";
 import {useSelector} from "react-redux";
-import { selectPages } from "../features/counterSlice";
+import { selectAdescos } from "../features/counterSlice";
 import {useState,useEffect} from "react";
 
 const Who =()=>{
-    const p=useSelector(selectPages);
+    const p=useSelector(selectAdescos);
 
     const [data,set_data]=useState(null);
 
     useEffect(()=>{
         if(p==null) return;
         const res=p.filter((item)=>{
-            return item.id==55;
+            return item.id==113;
         })
         if(res.length==0) return;
         set_data(res[0]);
@@ -20,8 +20,8 @@ const Who =()=>{
     return(
         <div className="who">
             <div className="content">
-                <h1>QUI SOMMES-NOUS ?</h1>
-                <div    dangerouslySetInnerHTML={{__html:data?.content.rendered}}/>
+                <h1>{data?.title.rendered}</h1>
+                <div    dangerouslySetInnerHTML={{__html:data?.acf.description}}/>
             </div>
         </div>
     );
