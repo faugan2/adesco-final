@@ -3,22 +3,19 @@ import "../styles/page_content_mobile.scss";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import {useSelector} from "react-redux";
-import { selectAdescos } from "../features/counterSlice";
+import { selectAdescos, selectPhotos } from "../features/counterSlice";
 import {useState,useEffect} from "react";
 
 const PageContent=()=>{
 
-    const p=useSelector(selectAdescos);
+    const p=useSelector(selectPhotos);
 
     const [data,set_data]=useState(null);
 
     useEffect(()=>{
         if(p==null) return;
-        const res=p.filter((item)=>{
-            return item.id==137;
-        })
-        if(res.length==0) return;
-        set_data(res[0]);
+
+        set_data(p);
     },[p])
 
 
@@ -27,8 +24,19 @@ const PageContent=()=>{
             <Nav />
                 <div className="content">
                     
-                <h2>{data?.title.rendered}</h2>
-                <div   dangerouslySetInnerHTML={{__html:data?.acf.description}}/>
+                <h2>galerie photos</h2>
+                <div className="galerie_image">
+                    {
+                        data?.map((item,i)=>{
+                            return(
+                                <div key={i}>
+                                    <img src={item.acf.file.url} />
+                                    <p>{item.title.rendered}</p>
+                                </div>
+                            );
+                        })
+                    }
+                </div>
                 </div>
             <Footer />
         </div>

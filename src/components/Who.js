@@ -14,6 +14,7 @@ const Who =()=>{
         const res=p.filter((item)=>{
             return item.id==113;
         })
+        
         if(res.length==0) return;
         set_data(res[0]);
     },[p])

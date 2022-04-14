@@ -28,7 +28,7 @@ const Une=()=>{
                 {
                     data?.map((activite,i)=>{
                         return(
-                            <div>
+                            <div key={activite.id}>
                                 <img src={activite.acf.image} />
                                 <h2>{activite.title.rendered}</h2>
                                 <p>{activite.acf.resume}</p>

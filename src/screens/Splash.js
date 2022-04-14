@@ -10,6 +10,7 @@ import {setActivites, setPages, setPartenaires,
     setBulletins,
     setAdescos,
     setLoading,
+    setPhotos,
 } from "../features/counterSlice";
 
 const Splash=()=>{
@@ -26,6 +27,7 @@ const Splash=()=>{
                 await load_avis();
                 await load_bulletins();
                 await load_adescos();
+                await load_photos();
                 dispatch(setLoading(false));
                 
                 history.replace("/home");
@@ -35,45 +37,51 @@ const Splash=()=>{
     },[])
 
     const load_activites=async ()=>{
-        const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/activites");
+        const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/activites?per_page=100");
         const data=await res.json();
         dispatch(setActivites(data))
     }
 
     const load_partenaires=async ()=>{
-        const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/partenaires");
+        const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/partenaires?per_page=100");
         const data=await res.json();
         dispatch(setPartenaires(data))
     }
 
     const load_pages=async ()=>{
-        const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/pages");
+        const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/pages?per_page=100");
         const data=await res.json();
         dispatch(setPages(data))
     }
 
     const load_rapports=async ()=>{
-        const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/rapports");
+        const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/rapports?per_page=100");
         const data=await res.json();
         dispatch(setRapports(data))
     }
 
     const load_avis=async ()=>{
-        const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/avis");
+        const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/avis?per_page=100");
         const data=await res.json();
         dispatch(setAvis(data))
     }
 
     const load_bulletins=async ()=>{
-        const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/bulletin");
+        const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/bulletin?per_page=100");
         const data=await res.json();
         dispatch(setBulletins(data))
     }
 
     const load_adescos=async ()=>{
-        const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/adesco");
+        const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/adesco?per_page=100");
         const data=await res.json();
         dispatch(setAdescos(data))
+    }
+
+    const load_photos=async ()=>{
+        const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/photos?per_page=100");
+        const data=await res.json();
+        dispatch(setPhotos(data))
     }
     return (
         <div className="splash">

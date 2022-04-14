@@ -19,6 +19,8 @@ import slide3 from "./img/slide3.jpeg";
 import slide4 from "./img/slide4.jpg";
 
 import SimpleImageSlider from "react-simple-image-slider";
+import {useSelector} from "react-redux";
+import {selectPhotos} from "../features/counterSlice";
 
 const images = [
     { url: slide1 },
@@ -28,40 +30,36 @@ const images = [
   ];
 
 const HomeTop=()=>{
-    const [assurances,set_assurances]=useState([
-        {
-            data:[
-                "Auto",
-                "Habitation",
-                "Voyage",
-                "RC chef de famille"
-            ]   
-        },
-        {
-            data:[
-                "Voyage",
-                "Accident",
-                "Transport de marchandises",
-                "Bris de glace",
-                "Santé"
-            ]
-        }
-    ])
+    const p=useSelector(selectPhotos);
+
     const [type,set_type]=useState(0);
     const [data,set_data]=useState(null);
     const [open,set_open]=useState(false);
-    
+    const [photos,set_photos]=useState(null);
+    const [texts,set_texts]=useState(null);
+    const [text,set_text]=useState("")
 
     useEffect(()=>{
-        set_data(assurances[type].data);
-    },[type])
+        if(p==null) return;
+        const d=[];
+        const t=[];
+        const res=p.map((item)=>{
+           t.push(item.title.rendered);
+           d.push({url:item.acf.file.url});
+        })
 
-    const type_changed=(e)=>{
-        const v=parseInt(e.target.value);
-        set_type(v);
-    }
+        set_texts(t);
+        set_photos(d);
+        set_text(t[0]);
+    },[p]);
 
     const history=useHistory();
+
+    const show_text=(index,len)=>{
+        if(texts==null) return;
+        set_text(texts[index-1]);
+    }
+
     return(
         <div className="home_top" style={{backgroundImage:`url(${banner})`,backgroundRepeat: 'no-repeat',}}>
             <div className="top">
@@ -69,17 +67,25 @@ const HomeTop=()=>{
                 <h1 className="content">BIENVENUE CHEZ l'ONG ADESCO</h1>
             </div>
             <div className="center">
-                <div className="left">
-                <SimpleImageSlider
+                <div className="left" onClick={e=>{
+                    history.push("/galerie-images");
+                }}>
+                {photos!=null && <SimpleImageSlider
                     width={300}
                     height={350}
-                    images={images}
+                    images={photos}
                     showBullets={false}
                     showNavs={false}
                     autoPlay={true}
                     navMargin={0}
+                    autoPlayDelay={3.5}
                     navStyle={2}
-                />
+                    onCompleteSlide={show_text}
+                />}
+                <div>
+                <p style={{zIndex:"999"}}>{text}</p>
+                </div>
+               
                 </div>
                 <div className="content">
                     <h2>Mieux connaitre l'ONG ADESCO</h2>

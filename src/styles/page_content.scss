@@ -14,5 +14,19 @@
             color:indianred;
             text-transform: uppercase;
         }
+
+        >div{
+            &.galerie_image{
+                display:grid;
+                grid-template-columns:32% 32% 32% ;
+                >div{
+                    margin-left: 1rem;
+                    
+                    >p{
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
     }
 }

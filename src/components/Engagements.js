@@ -68,7 +68,7 @@ const Engagements=()=>{
                 {
                     data?.map((item,i)=>{
                         return(
-                            <div key={i}>
+                            <div key={i+Math.random()}>
                                     <img src={item.image} />
                                     <h3>{item.title}</h3>
                                     <p>{item.detail}</p>  
