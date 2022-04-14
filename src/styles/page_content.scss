@@ -23,9 +23,12 @@
                 
                 >div{
                     margin-left: 1rem;
-                    >img{
+                    >img,iframe{
                         width:min(300px,100%);
+                        border:3px solid indianred;
+                        border-radius: 5px;
                     }
+                    
                     >p{
                         font-size: 0.9rem;
                     }

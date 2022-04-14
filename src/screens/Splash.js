@@ -11,6 +11,7 @@ import {setActivites, setPages, setPartenaires,
     setAdescos,
     setLoading,
     setPhotos,
+    setVideos,
 } from "../features/counterSlice";
 
 const Splash=()=>{
@@ -28,6 +29,7 @@ const Splash=()=>{
                 await load_bulletins();
                 await load_adescos();
                 await load_photos();
+                await load_videos();
                 dispatch(setLoading(false));
                 
                 history.replace("/home");
@@ -82,6 +84,12 @@ const Splash=()=>{
         const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/photos?per_page=100");
         const data=await res.json();
         dispatch(setPhotos(data))
+    }
+
+    const load_videos=async ()=>{
+        const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/videos?per_page=100");
+        const data=await res.json();
+        dispatch(setVideos(data))
     }
     return (
         <div className="splash">

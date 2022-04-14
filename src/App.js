@@ -24,6 +24,7 @@ import Projets from "./screens/Projets";
 import Adhesion from "./screens/Adhesion";
 import Donateurs from "./screens/Donateurs";
 import GalerieImage from "./screens/GalerieImage";
+import GalerieVideo from "./screens/GalerieVideo";
 
 function App() {
   return (
@@ -96,6 +97,10 @@ function App() {
 
           <Route path="/galerie-images" exact>
             <GalerieImage />
+          </Route>
+
+          <Route path="/galerie-videos" exact>
+            <GalerieVideo />
           </Route>
 
         </Switch>

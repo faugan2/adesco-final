@@ -39,7 +39,7 @@ const Footer=()=>{
                 <hr />
                     <ul>
                         <li><Link to="/galerie-images"><a>Photos</a></Link></li>
-                        <li><Link to="#"><a>Vidéos</a></Link></li>
+                        <li><Link to="/galerie-videos"><a>Vidéos</a></Link></li>
                     </ul>
                 </div>
                 <div>
