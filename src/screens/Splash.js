@@ -14,6 +14,8 @@ import {setActivites, setPages, setPartenaires,
     setVideos,
 } from "../features/counterSlice";
 
+import logo from "../components/img/logo.png";
+
 const Splash=()=>{
     const history=useHistory();
     const dispatch=useDispatch();
@@ -94,6 +96,7 @@ const Splash=()=>{
     return (
         <div className="splash">
            <div>
+               <img src={logo} />
                <CircularProgress size={25} />
                <p>Chargement...</p>
            </div>

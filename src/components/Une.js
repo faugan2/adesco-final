@@ -4,11 +4,14 @@ import banner from "./img/banner.webp";
 import auto from "./img/auto.jpg";
 import garantie from "./img/garantie.jpg";
 import sanction from "./img/sanction.jpg";
-import { useSelector } from "react-redux";
-import {selectActivites} from "../features/counterSlice";
+import { useSelector,useDispatch } from "react-redux";
+import {selectActivites,setActivite} from "../features/counterSlice";
 import {useState,useEffect} from "react";
+import {useHistory} from "react-router-dom";
 
 const Une=()=>{
+    const history=useHistory();
+    const dispatch=useDispatch();
     const activites=useSelector(selectActivites);
 
     const [data,set_data]=useState(null);
@@ -26,9 +29,12 @@ const Une=()=>{
             <div className="content">
 
                 {
-                    data?.map((activite,i)=>{
+                    data?.slice(0,4).map((activite,i)=>{
                         return(
-                            <div key={activite.id}>
+                            <div key={activite.id} onClick={e=>{
+                                dispatch(setActivite(activite));
+                                history.push("/details-activite")
+                            }}>
                                 <img src={activite.acf.image} />
                                 <h2>{activite.title.rendered}</h2>
                                 <p>{activite.acf.resume}</p>

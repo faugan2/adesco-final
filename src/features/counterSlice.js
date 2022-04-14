@@ -13,6 +13,7 @@ const initialState = {
   loading:false,
   photos:null,
   videos:null,
+  activite:null,
 };
 
 
@@ -57,6 +58,9 @@ export const counterSlice = createSlice({
     },
     setVideos:(state,action)=>{
       state.videos=action.payload;
+    },
+    setActivite:(state,action)=>{
+      state.activite=action.payload;
     }
   },
  
@@ -70,6 +74,7 @@ setAdescos,
 setLoading,
 setPhotos,
 setVideos,
+setActivite,
 } = counterSlice.actions;
 
 
@@ -84,5 +89,6 @@ export const selectAdescos=(state)=> state.counter.adescos;
 export const selectLoading=(state)=> state.counter.loading;
 export const selectPhotos=(state)=> state.counter.photos;
 export const selectVideos=(state)=> state.counter.videos;
+export const selectActivite=(state)=> state.counter.activite;
 
 export default counterSlice.reducer;

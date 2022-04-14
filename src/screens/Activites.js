@@ -10,9 +10,10 @@ import Informer from "../components/Informer";
 import Footer from "../components/Footer";
 
 import { useSelector } from "react-redux";
-import {selectActivites, setPage} from "../features/counterSlice";
+import {selectActivites, setPage,setActivite} from "../features/counterSlice";
 import {useState,useEffect} from "react";
 import {useDispatch} from "react-redux";
+import {useHistory} from "react-router-dom";
 
 const Activites=()=>{
 
@@ -26,6 +27,8 @@ const Activites=()=>{
     },[activites])
 
     const dispatch=useDispatch();
+    const history=useHistory();
+
     useEffect(()=>{
         dispatch(setPage(1))
     },[])
@@ -38,7 +41,10 @@ const Activites=()=>{
                    {
                        data?.map((item,i)=>{
                            return(
-                               <div key={i}>
+                               <div key={i} onClick={e=>{
+                                   dispatch(setActivite(item));
+                                   history.push("/details-activite")
+                               }}>
                                     <img src={item.acf.image} />
                                     <h4>{item.title.rendered}</h4>
                                     <p>{item.acf.resume}</p>
