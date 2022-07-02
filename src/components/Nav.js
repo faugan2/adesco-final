@@ -17,6 +17,7 @@ import ccm from "./img/ccm.jpg";
 import adesco from "./img/adesco.jpg";
 import { selectPage,selectAdescos, selectLoading } from "../features/counterSlice";
 import {useSelector} from "react-redux";
+import logo from "./img/logo.png";
 
 const Nav=()=>{
     const p=useSelector(selectPage);
@@ -53,7 +54,7 @@ const Nav=()=>{
             <div className="left" onClick={e=>{
                 history.push("/client");
             }}>
-                <img src={adesco}/> 
+                <img src={logo}/> 
                 <h1>ONG <span>ADESCO</span></h1>
             </div>
             <div className="right">

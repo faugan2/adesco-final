@@ -20,11 +20,12 @@ const Home=()=>{
         <div className="home">
             <Nav />
             <HomeTop />
-            <Parteners />
+           
             <Engagements />
             <Who />
             <Une />
             <Informer />
+            <Parteners />
             <Footer />
         </div>
     )

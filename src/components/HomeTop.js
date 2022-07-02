@@ -10,13 +10,14 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import {useState,useEffect} from "react";
 import Modal from "./Modal";
 import Contact from "./Contact";
-
+import { Slide } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css'
 import {useHistory} from "react-router-dom";
 
-import slide1 from "./img/slide1.jpg";
-import slide2 from "./img/slide2.jpg";
-import slide3 from "./img/slide3.jpeg";
-import slide4 from "./img/slide4.jpg";
+import slide1 from "./img/slides/1.jpg";
+import slide2 from "./img/slides/2.jpg";
+import slide3 from "./img/slides/3.jpg";
+import slide4 from "./img/slides/4.jpg";
 
 import SimpleImageSlider from "react-simple-image-slider";
 import {useSelector} from "react-redux";
@@ -59,14 +60,36 @@ const HomeTop=()=>{
         if(texts==null) return;
         set_text(texts[index-1]);
     }
+    const images = [
+        slide1,slide2,slide3,slide4    
+    ];
 
     return(
-        <div className="home_top" style={{backgroundImage:`url(${banner})`,backgroundRepeat: 'no-repeat',}}>
+        <div className="home_top">
             <div className="top">
                 <h1></h1>
                 <h1 className="content">BIENVENUE CHEZ l'ONG ADESCO</h1>
             </div>
-            <div className="center">
+            <div style={{flex:1}}>
+            <Slide slidesToScroll={2} slidesToShow={2} indicators={true}>
+            <div className="each-slide-effect">
+                <div style={{ 'backgroundImage': `url(${images[0]})` }}>
+                    <span>Slide 1</span>
+                </div>
+            </div>
+            <div className="each-slide-effect">
+                <div style={{ 'backgroundImage': `url(${images[1]})` }}>
+                    <span>Slide 2</span>
+                </div>
+            </div>
+            <div className="each-slide-effect">
+                <div style={{ 'backgroundImage': `url(${images[2]})` }}>
+                    <span>Slide 3</span>
+                </div>
+            </div>
+        </Slide>
+            </div>
+            {/*<div className="center">
                 <div className="left" onClick={e=>{
                     history.push("/galerie-images");
                 }}>
@@ -138,7 +161,7 @@ const HomeTop=()=>{
                     <button onClick={e=>set_open(true)}>Nous conacter</button>
                 </div>
                 
-            </div>
+            </div>*/}
 
             {open==true && <Modal content={<Contact click={e=>{set_open(false)}}/>} click={e=>{set_open(false)}}/>}
         </div>

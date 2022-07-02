@@ -12,7 +12,8 @@ import adesco from "./img/adesco.jpg";
 import jsql from "./img/jsql.png";
 import { useSelector } from "react-redux";
 import {selectPartenaires} from "../features/counterSlice";
-
+import { Slide } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css'
 
 const Parteners=()=>{
     const p=useSelector(selectPartenaires);
@@ -23,23 +24,27 @@ const Parteners=()=>{
         if(p==null) return;
         set_data(p);
     },[p])
+
+    return null;
     return(
         <div className="parteners">
-           <ScrollMenu>
+           <Slide>
                 {
                     data?.map((item,i)=>{
-                        return(
-                           <button 
-                            key={i}
-                            className="partener"
-                           >
-                               <img src={item.acf.image.url} />
-                               <h4>{item.title.rendered}</h4>
-                           </button>
+                        
+                        return (
+                            <div className="each-slide-effect" key={i}>
+                                <div style={{ 'backgroundImage': `url(${item.acf.image.url})` }}>
+                                    <span>{item.title.rendered}</span>
+                                </div>
+                            </div>
                         )
+                        
                     })
                 }
-                </ScrollMenu>
+                </Slide>
+
+               
         </div>
     );
 }
