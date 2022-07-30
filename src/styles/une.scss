@@ -1,24 +1,24 @@
 .une{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
+    
     background-color:#ededed;
+    //padding-left:1rem;
     >.top{
-        
+        width:80%;
+        align-items: center;
         display:flex;
         flex-direction: column;
-        align-items: center;
+        
         margin-bottom: 1rem;
         padding-top: 2rem;
-        width:80%;
+       
         >h1{
-            font-size: 1.6rem;
+            font-size: 2rem;
             text-transform: uppercase;
             color:#3a434a;
         }
         >h2{
             font-size: 1rem;
-            color:dimgray;
+            color:black;
         }
         >p{
             
@@ -27,6 +27,7 @@
     }
     >.content{
         width:80%;
+        
         display:grid;
         grid-template-columns: 24% 24% 24% 24%;
         grid-gap: 1rem;
@@ -52,6 +53,7 @@
                 min-height: 50px;
                 padding:0.5rem;
             }
+            
 
             >p{
                 color:dimgray;

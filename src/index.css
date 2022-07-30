@@ -11,6 +11,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #3a3a3a;
+  background-color: var(--blue) !important;
 }
 
 code {
@@ -23,3 +24,8 @@ code {
   padding:0;
 }
 
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

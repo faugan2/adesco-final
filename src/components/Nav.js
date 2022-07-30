@@ -18,6 +18,11 @@ import adesco from "./img/adesco.jpg";
 import { selectPage,selectAdescos, selectLoading } from "../features/counterSlice";
 import {useSelector} from "react-redux";
 import logo from "./img/logo.png";
+import LanguageIcon from '@material-ui/icons/Language';
+import Langues from "./Langues";
+import {LanguageList,T} from "react-translator-component";
+import {db,firebase} from "../firebase_file";
+
 
 const Nav=()=>{
     const p=useSelector(selectPage);
@@ -34,11 +39,14 @@ const Nav=()=>{
 
     const [open,set_open]=useState(false);
     const [page,set_page]=useState(0);
+    const [langue,set_langue]=useState(null);
 
     useEffect(()=>{
         if(p==null) return;
         set_page(p);
     },[p])
+
+
 
     
     const show_menu=(e)=>{
@@ -47,6 +55,12 @@ const Nav=()=>{
         const btn=document.querySelector(".nav>button")
         btn.classList.toggle("active")
     }
+
+    useEffect(()=>{
+        db.collection("visites").add({
+            date:firebase.firestore.FieldValue.serverTimestamp()
+        })
+    },[])
 
   
     return(
@@ -97,9 +111,12 @@ const Nav=()=>{
 
                    
 
-                    <li  onClick={e=>{set_open(true)}}>
-                        <MailOutlineIcon />
-                        <Link to="#"><a>Contact</a></Link>
+                    {/*<li  onClick={e=>{set_open(true)}}>
+                        <LanguageIcon />
+                        <Link to="#"><a>Langue</a></Link>
+                    </li>*/}
+                    <li style={{zIndex:9999}}>
+                    <LanguageList Theme="Dropdown" Language={langue} />
                     </li>
                 </ul>
             </div>
@@ -110,7 +127,7 @@ const Nav=()=>{
                 <span></span>
             </button>
 
-            {open==true && <Modal content={<Contact click={e=>{set_open(false)}}/>} click={e=>{set_open(false)}}/>}
+            {open==true && <Modal content={<Langues click={e=>{set_open(false)}}/>} click={e=>{set_open(false)}}/>}
         </div>
     )
 }

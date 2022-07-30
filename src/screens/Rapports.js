@@ -27,8 +27,11 @@ const PageContent=()=>{
 
 
     return(
+        <>
+        <Nav />
+        
         <div className="rapports">
-            <Nav />
+            
                 <div className="content">
                     <h2>Nos rapports d'activités</h2>
                     <div>
@@ -54,6 +57,7 @@ const PageContent=()=>{
                 </div>
             <Footer />
         </div>
+        </>
     );
 }
 export default PageContent;

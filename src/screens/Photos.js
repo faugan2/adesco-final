@@ -2,33 +2,46 @@ import "../styles/page_content.scss";
 import "../styles/page_content_mobile.scss";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import {useSelector,useDispatch} from "react-redux";
-import { selectAdescos, selectCategorie_galerie, selectPhotos ,setSelected_categorie} from "../features/counterSlice";
+import {useSelector} from "react-redux";
+import { selectAdescos, selectCategorie_galerie, selectPhotos, selectSelected_categorie } from "../features/counterSlice";
 import {useState,useEffect} from "react";
-import {useHistory} from "react-router-dom";
+import {useHistory,useParams} from "react-router-dom";
 
 const PageContent=()=>{
 
     const p=useSelector(selectPhotos);
     const cat=useSelector(selectCategorie_galerie);
+    const s=useSelector(selectSelected_categorie);
 
     const [data,set_data]=useState(null);
     const [categories,set_categories]=useState(null);
 
     const history=useHistory();
-    const dispatch=useDispatch();
+    console.log("s=",s);
 
     useEffect(()=>{
         if(p==null) return;
         if(cat==null) return;
+        if(s==null) return;
 
-        set_data(p);
-        set_categories(cat);
-    },[p,cat])
+        const res_cat=cat.filter((item,i)=>{
+            return item.id==s;
+        })
+        if(res_cat.length>0){
+            set_categories(res_cat[0])
+        }
+
+        const res=p.filter((item,i)=>{
+            return item.acf.categories==s;
+        })
+       
+        
+        set_data(res);
+        //set_categories(cat);
+    },[p,cat,s])
 
     const go_to_photos=(id)=>{
-        dispatch(setSelected_categorie(id))
-        history.push("/photos");
+        history.push("/photos",{id});
     }
 
 
@@ -38,18 +51,18 @@ const PageContent=()=>{
         
         <div className="page_content">
            
-                <div className="content flex flex-col">
+                <div className="content">
                     
-                <h2>Catégories de galerie photos</h2>
-                <div className="flex justify-between">
+                <h2>{categories?.title.rendered}</h2>
+                <div className="galerie_image">
                     {
-                        categories?.map((item,i)=>{
+                        data?.map((item,i)=>{
                             return(
                                 <div key={i} className="flex-1 flex flex-col m-1 cursor-pointer hover:opacity-50"
-                                title={item.id}
-                                onClick={go_to_photos.bind(this,item.id)}
+                               
+                                
                                 >
-                                    <img src={item.acf.image.url} className="h-60 mb-2"/>
+                                    <img src={item.acf.file.url} className="h-60 mb-2"/>
                                     <p className="text-center">{item.title.rendered}</p>
                                 </div>
                             );

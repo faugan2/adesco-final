@@ -14,6 +14,9 @@ const initialState = {
   photos:null,
   videos:null,
   activite:null,
+  categories_galerie:null,
+  selected_categorie:null,
+  visite:null,
 };
 
 
@@ -61,6 +64,15 @@ export const counterSlice = createSlice({
     },
     setActivite:(state,action)=>{
       state.activite=action.payload;
+    },
+    setCategorie_galerie:(state,action)=>{
+      state.categories_galerie=action.payload;
+    },
+    setSelected_categorie:(state,action)=>{
+      state.selected_categorie=action.payload;
+    },
+    setVisite:(state,action)=>{
+      state.visite=action.payload;
     }
   },
  
@@ -75,6 +87,9 @@ setLoading,
 setPhotos,
 setVideos,
 setActivite,
+setCategorie_galerie,
+setSelected_categorie,
+setVisite
 } = counterSlice.actions;
 
 
@@ -90,5 +105,8 @@ export const selectLoading=(state)=> state.counter.loading;
 export const selectPhotos=(state)=> state.counter.photos;
 export const selectVideos=(state)=> state.counter.videos;
 export const selectActivite=(state)=> state.counter.activite;
+export const selectCategorie_galerie=(state)=> state.counter.categories_galerie;
+export const selectSelected_categorie=(state)=> state.counter.selected_categorie
+export const selectVisite=(state)=> state.counter.visite;
 
 export default counterSlice.reducer;

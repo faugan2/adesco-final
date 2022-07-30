@@ -73,7 +73,7 @@ const Footer=()=>{
                         <li>
                             <Link to="#">
                                 <WhatsAppIcon />
-                                <a>+228 92 04 03 78</a>
+                                <a>+228 92 14 68 75</a>
                             </Link>
                         </li>
 
@@ -90,7 +90,7 @@ const Footer=()=>{
 
             <div className="bottom">
                 <div className="content">
-                <p>ccmcourtiers.com - Copyright &copy; 2018-2022 - Tous droits résevés.</p>
+                <p className="text-center">ongadesco.org - Copyright &copy; 2018-2022 - Tous droits résevés.</p>
                 </div>
                 
             </div>

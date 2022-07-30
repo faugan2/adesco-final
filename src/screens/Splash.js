@@ -12,9 +12,12 @@ import {setActivites, setPages, setPartenaires,
     setLoading,
     setPhotos,
     setVideos,
+    setCategorie_galerie,
+    setVisite,
 } from "../features/counterSlice";
 
 import logo from "../components/img/logo.png";
+import {db} from "../firebase_file";
 
 const Splash=()=>{
     const history=useHistory();
@@ -32,6 +35,8 @@ const Splash=()=>{
                 await load_adescos();
                 await load_photos();
                 await load_videos();
+                await load_categorie_galerie();
+                await load_visite();
                 dispatch(setLoading(false));
                 
                 history.replace("/home");
@@ -39,6 +44,26 @@ const Splash=()=>{
             
         
     },[])
+
+    const load_visite=async ()=>{
+        db.collection("visites").onSnapshot((snap)=>{
+            const d=[];
+            snap.docs.map((doc)=>{
+                const id=doc.id;
+                const data=doc.data();
+                data.id=id;
+                d.push(data);
+            })
+            dispatch(setVisite(d))
+        })
+    }
+
+    const load_categorie_galerie=async ()=>{
+        const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/categorie_galerie?per_page=100");
+        const data=await res.json();
+        dispatch(setCategorie_galerie(data))
+    }
+
 
     const load_activites=async ()=>{
         const res=await fetch("https://ongadesco.org/admin/wp-json/wp/v2/activites?per_page=100");
@@ -94,6 +119,7 @@ const Splash=()=>{
         dispatch(setVideos(data))
     }
     return (
+        
         <div className="splash">
            <div>
                <img src={logo} />

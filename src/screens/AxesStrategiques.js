@@ -23,8 +23,10 @@ const PageContent=()=>{
 
 
     return(
+        <>
+        <Nav />
         <div className="page_content">
-            <Nav />
+            
                 <div className="content">
                     
                 <h2>{data?.title.rendered}</h2>
@@ -32,6 +34,7 @@ const PageContent=()=>{
                 </div>
             <Footer />
         </div>
+        </>
     );
 }
 export default PageContent;

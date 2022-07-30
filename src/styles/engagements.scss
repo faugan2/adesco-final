@@ -5,8 +5,8 @@
     min-height: 400px;
     padding-bottom: 2rem;
     >*{
-        width:80vw;
-        margin:auto;
+        width:80%;
+        /*margin:auto;*/
         
         &.top{
             
@@ -17,10 +17,10 @@
             background-color:white;
             border-radius: 5px;
            
-            >h2{
+            >h1{
                 text-transform: uppercase;
                 color:dimgray;
-                padding:1rem;
+                padding:2rem;
             }
         }
 

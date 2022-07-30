@@ -10,6 +10,7 @@ import Footer from "../components/Footer";
 import {useState,useEffect} from "react";
 import {useDispatch} from "react-redux";
 import {setPage} from "../features/counterSlice";
+import Stats from "../components/Stats";
 
 const Home=()=>{
     const dispatch=useDispatch();
@@ -20,12 +21,15 @@ const Home=()=>{
         <div className="home">
             <Nav />
             <HomeTop />
-           
-            <Engagements />
-            <Who />
-            <Une />
-            <Informer />
-            <Parteners />
+            <div style={{position:"relative"}}>
+                <Engagements />
+                <Who />
+                <Une />
+                <Informer />
+                <Parteners />
+                <Stats />
+            </div>
+            
             <Footer />
         </div>
     )

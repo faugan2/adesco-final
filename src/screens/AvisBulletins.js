@@ -33,8 +33,11 @@ const PageContent=()=>{
 
 
     return(
+        <>
+        <Nav />
+        
         <div className="avis">
-            <Nav />
+            
                 <div className="content">
                     <h2>Avis</h2>
                     <div>
@@ -84,6 +87,7 @@ const PageContent=()=>{
                 </div>
             <Footer />
         </div>
+        </>
     );
 }
 export default PageContent;

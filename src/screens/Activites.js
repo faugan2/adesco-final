@@ -35,16 +35,19 @@ const Activites=()=>{
 
 
     return(
+        <>
+        <Nav />
+       
         <div className="activites">
-            <Nav />
-                <div className="content">
+            
+                <div className="content mt-4">
                    {
                        data?.map((item,i)=>{
                            return(
                                <div key={i} onClick={e=>{
                                    dispatch(setActivite(item));
                                    history.push("/details-activite")
-                               }}>
+                               }} className="mt-4">
                                     <img src={item.acf.image} />
                                     <h4>{item.title.rendered}</h4>
                                     <p>{item.acf.resume}</p>
@@ -55,6 +58,7 @@ const Activites=()=>{
                 </div>
             <Footer />
         </div>
+        </>
     );
 }
 export default Activites;

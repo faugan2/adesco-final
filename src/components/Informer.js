@@ -18,7 +18,9 @@ const Informer=()=>{
 
     useEffect(()=>{
         if(activites==null) return;
-        set_data(activites);
+        let a=[...activites];
+        
+        set_data(a.reverse());
     },[activites])
     return(
         <div className="informer">
@@ -34,7 +36,7 @@ const Informer=()=>{
                 >
                     <MoreHorizIcon style={{color:"white"}}/>
                     <span>
-                    Tous nos publications</span>
+                    Toutes nos publications</span>
                 </button>
             </div>
             <div className="content">
@@ -45,7 +47,9 @@ const Informer=()=>{
                             <div key={i} onClick={e=>{
                                 dispatch(setActivite(item));
                                 history.push("/details-activite")
-                            }}>
+                            }}
+                            
+                            >
                                 <div>
                                     <img src={item.acf.image} />
                                     <h3>{item.title.rendered}</h3>

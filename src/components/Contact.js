@@ -4,12 +4,12 @@ import CloseIcon from '@material-ui/icons/Close';
 const Contact=({click})=>{
     return(
         <div className="contact">
-            <div className="top">
+            {/*<div className="top hidden">
                 <h2>Contactez l'ONG ADESCO</h2>
                 <button onClick={click}>
                     <CloseIcon />
                 </button>
-            </div>
+            </div>*/}
             <div className="line">
                 <label>Votre nom complet</label>
                 <input type="text" />

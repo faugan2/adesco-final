@@ -1,6 +1,6 @@
 .page_content{
     
-
+    background-color:whitesmoke;
     >.content{
         border-top:1px solid silver;
         padding-top: 1rem;
@@ -9,6 +9,12 @@
         margin:auto;
         margin-top:2rem;
         margin-bottom: 2rem;
+
+        -webkit-columns: 40px 2;
+        /* Chrome, Safari, Opera */
+        -moz-columns: 60px 2;
+        /* Firefox */
+        columns: 60px 2;
         >h2{
             margin-bottom: 1rem;
             color:indianred;
@@ -16,6 +22,9 @@
         }
 
         >div{
+
+           
+
             &.galerie_image{
                 display:grid;
                 grid-template-columns:32% 32% 32% ;

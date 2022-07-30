@@ -5,7 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
+import ScrollToTop from "./components/ScrollToTop";
 
 import Splash from './screens/Splash';
 import Home from "./screens/Home";
@@ -26,10 +26,25 @@ import Donateurs from "./screens/Donateurs";
 import GalerieImage from "./screens/GalerieImage";
 import GalerieVideo from "./screens/GalerieVideo";
 import ActivitesDetails from "./screens/ActivitesDetails";
+import Photos from "./screens/Photos";
+import { Translator, T, TF, LanguageList, Config } from 'react-translator-component'
+Config.default = 'fr';
+Config.list = {
+  en: {
+    text: 'English',
+    
+  },
+  tr: {
+    text: 'French',
+    
+  }
+}
 
 function App() {
   return (
     <Router>
+      <Translator>
+      <ScrollToTop>
         <Switch>
           <Route path="/client" exact>
             <Splash />
@@ -108,7 +123,13 @@ function App() {
             <ActivitesDetails />
           </Route>
 
+          <Route path="/photos" exact>
+            <Photos />
+          </Route>
+
         </Switch>
+        </ScrollToTop>
+        </Translator>
     </Router>
   );
 }
