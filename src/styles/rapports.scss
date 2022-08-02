@@ -1,0 +1,59 @@
+.rapports{
+    background-color:whitesmoke;
+    >.content{
+        border-top:1px solid silver;
+        min-height: 50vh;
+        width:80vw;
+        margin:auto;
+        margin-top: 2rem;
+        padding-top: 1rem;
+
+        >h2{
+            text-transform: uppercase;
+            color:indianred;
+            margin-bottom: 2rem;
+        }
+        >div{
+            display:grid;
+            grid-template-columns:25% 25% 25% 25%;
+            grid-gap: 1rem;
+            >div{
+                border:1px solid silver;
+
+                border-radius: 5px;
+                min-height: 160px;
+                position:relative;
+                >h3{
+                    background-color:var(--blue);
+                    color:white;
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                    font-size: 1rem;
+                    padding:0.5rem;
+                }
+                >p{
+                    padding:0.5rem;
+                    font-size: 0.9rem;
+                    color:dimgray;
+                    text-align: justify;
+                }
+                >button{
+                    position:absolute;
+                    bottom:0.5rem;
+                    width:min(120px, 80vw);
+                    margin-left:25%;
+                    padding:0.5rem;
+                    border:none;
+                    display:flex;
+                    align-items: center;
+                    gap:0.5rem;
+                    cursor: pointer;
+                    border-radius: 3px;
+                    >svg{
+                        font-size:1.2rem;
+                    }
+                }
+            }
+        }
+    }
+}

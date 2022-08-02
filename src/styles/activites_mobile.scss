@@ -1,0 +1,8 @@
+@media only screen and (max-width:768px){
+    .activites{
+        >.content{
+            
+            grid-template-columns: 50% 50%;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+.page_content{
+    
+    background-color:whitesmoke;
+    >.content{
+        border-top:1px solid silver;
+        padding-top: 1rem;
+        min-height: 50vh;
+        width:80vw;
+        margin:auto;
+        margin-top:2rem;
+        
+
+        -webkit-columns: 40px 2;
+        /* Chrome, Safari, Opera */
+        -moz-columns: 60px 2;
+        /* Firefox */
+        columns: 60px 2;
+        >h2{
+            margin-bottom: 1rem;
+            color:indianred;
+            text-transform: uppercase;
+        }
+
+        >div{
+
+           
+
+            &.galerie_image{
+                display:grid;
+                grid-template-columns:32% 32% 32% ;
+                grid-gap: 1rem;
+                
+                >div{
+                    margin-left: 1rem;
+                    >img,iframe{
+                        width:min(300px,100%);
+                        border:3px solid indianred;
+                        border-radius: 5px;
+                    }
+                    
+                    >p{
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+    }
+}

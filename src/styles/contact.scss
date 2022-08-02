@@ -1,0 +1,67 @@
+.contact{
+    
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    
+    >.top{
+        background-color:var(--blue);
+        height:50px;
+        display:flex;
+        align-items: center;
+        justify-content:space-between;
+        color:white;
+        margin-bottom: 1rem;
+        >h2{
+            font-size: 1rem;
+            margin-left: 1rem;
+        }
+
+        >button{
+            width:40px;
+            height: 40px;
+            border-radius: 50%;
+            border:none;
+            display:flex;
+            align-items: center;
+            justify-content:center;
+            background-color:white;
+            cursor: pointer;
+            >svg{
+                color:indianred;
+            }
+        }
+        
+    }
+    >.line{
+        display:flex;
+        flex-direction: column;
+        margin:auto;
+        margin-bottom: 1rem;
+        width:80%;
+        
+
+        >label{
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        >input,textarea{
+           
+            font-size: 0.8rem;
+            border:none;
+            outline:none;
+            border-bottom: 1px solid black;
+            padding:0.5rem;
+        }
+
+        >button{
+            padding:0.6rem;
+            background-color: var(--blue);
+            color:white;
+            font-weight: bold;
+            border:none;
+            border-radius: 3px;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+.who{
+    background-color:#ededed;
+    
+    >.content{
+        width:80%;
+       /* margin:auto;*/
+        text-align: justify;
+        background-color:white;
+        border-radius: 5px;
+        
+       
+       -webkit-columns: 40px 2;
+        /* Chrome, Safari, Opera */
+        -moz-columns: 60px 2;
+        /* Firefox */
+        columns: 60px 2;
+        
+        >*{
+            color:#3a434a;
+            padding:1rem;
+        }
+        >h1{
+            text-align: center;
+            color:dimgray;
+            padding:1rem;
+            font-size: 2rem;
+			padding-bottom:0;
+        }
+
+        >ul{
+            padding:0.5rem;
+            margin-left: 1rem;
+
+        }
+    }
+}

@@ -1,0 +1,83 @@
+.engagements{
+   
+    background-color: #ededed;
+    padding-top: 2rem;
+    min-height: 400px;
+    padding-bottom: 2rem;
+    >*{
+        width:80%;
+        /*margin:auto;*/
+        
+        &.top{
+            
+            font-size: 1.2rem;
+            display:flex;
+            align-items: center;
+            justify-content:center;
+            background-color:white;
+            border-radius: 5px;
+           
+            >h1{
+                text-transform: uppercase;
+                color:dimgray;
+                padding:2rem;
+            }
+        }
+
+        &.content{
+            background-color:white;
+            border-radius: 5px;
+
+            display:grid;
+            grid-template-columns:24% 24% 24% 24%;
+            grid-gap: 0.5rem;
+            >div{
+                flex:1;
+                display:flex;
+                flex-direction: column;
+                align-items: center;
+                
+                min-height:120px;
+                
+                margin-bottom: 1rem;
+
+                &:hover{
+                    opacity: 0.6;
+                    
+                }
+                
+                
+                margin-left: 1rem;
+                &:nth-child(4){
+                    border-right: none
+                }
+
+                >svg{
+                    color:var(--blue);
+                    font-size: 4rem;
+                    margin-bottom: 1rem;
+                }
+
+                >img{
+                    width:100%;
+                   
+                }
+
+                >h3{
+                    text-align: left;
+                    font-size: 0.9rem;
+                    color:var(--blue);
+
+                }
+
+                >p{
+                    text-align: left;
+                    font-size: 0.8rem;
+                    color:#3a434a;
+                    font-weight: normal;
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+}
